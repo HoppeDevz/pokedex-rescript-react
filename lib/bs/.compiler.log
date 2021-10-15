@@ -1,0 +1,26 @@
+#Start(1501964)
+
+  Warning number 26
+  C:\Users\Gabriel Hoppe\Desktop\rescript-react\rescript-react\src\App.res:26:9-15
+  
+  24 │ let make = () => {
+  25 │ 
+  26 │     let loading = false;
+  27 │     let logHandle = _ => Js.log("Hello!");
+  28 │ 
+  
+  unused variable loading.
+  
+
+  Warning number 26
+  C:\Users\Gabriel Hoppe\Desktop\rescript-react\rescript-react\src\App.res:27:9-17
+  
+  25 ┆ 
+  26 ┆ let loading = false;
+  27 ┆ let logHandle = _ => Js.log("Hello!");
+  28 ┆ 
+  29 ┆ <Div>
+  
+  unused variable logHandle.
+  
+#Done(1502102)
