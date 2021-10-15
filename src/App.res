@@ -27,6 +27,7 @@ let make = () => {
     let logHandle = _ => Js.log("Hello!");
 
     <Div>
-        <Header title="Pokedex" />
+        <Header title="Pokedex - rescript/react" />
+        <Pokedex />
     </Div>
 }

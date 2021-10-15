@@ -1,7 +1,18 @@
 .pokedex-header-wrapper {
-
     width: 100vw;
-    height: 30px;
+    height: 90px;
 
-    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--second-color);
+}
+.pokedex-header-wrapper .title {
+    font-weight: bold;
+    font-size: 20px;
+
+    color: white;
 }

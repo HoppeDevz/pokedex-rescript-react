@@ -1,4 +1,15 @@
 * {
     padding: 0;
     margin: 0;
+
+    font-family: 'Mada', sans-serif;
+}
+
+:root {
+    --primary-color: #293744;
+    --second-color: #1d2934;
+}
+
+body {
+    background-color: var(--primary-color);
 }

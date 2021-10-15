@@ -4,6 +4,6 @@
 let make = (~title) => {
 
     <header className="pokedex-header-wrapper">
-        <h1>{title -> React.string}</h1>
+        <h1 className="title">{title -> React.string}</h1>
     </header>
 }
