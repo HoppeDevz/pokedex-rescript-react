@@ -1,35 +1,16 @@
-open Render
+open Types
 
 %%raw(`import './Pokedex.css'`)
 
-type resultsObj = {
-    name: string,
-    url: string,
-    img_url: string
-}
-
-type responseData = {
-    count: int,
-
-    next: string,
-    previous: string,
-
-    results: array<resultsObj>,
-
-    length: int
-};
-
 @scope("JSON") @val
-external parseIntoMyData: string => responseData = "parse"
+external parseIntoMyData: string => Types.responseData = "parse"
 
 @react.component
 let make = () => {
 
-    let pokemons_initialValue: array<resultsObj> = [];
-    let pokemonsindex_i: int = 0;
+    let pokemons_initialValue: array<Types.resultsObj> = [];
 
     let (pokemons, setPokemons) = React.useState(_ => pokemons_initialValue)
-    let (loadingPokemons, setLoadingPokemons) = React.useState(_ => false)
 
     React.useEffect0(() => {
 
@@ -40,7 +21,6 @@ let make = () => {
                 let results = ( _ => parseIntoMyData( Js.Json.stringify(json) ).results )
 
                 setPokemons(results)
-                setLoadingPokemons(_ => true)
             }
             ->Js.Promise.resolve, _)
 

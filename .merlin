@@ -11,6 +11,8 @@ S C:\Users\Gabriel Hoppe\Desktop\rescript-react\rescript-react\node_modules\bs-f
 B C:\Users\Gabriel Hoppe\Desktop\rescript-react\rescript-react\node_modules\bs-fetch\lib\ocaml
 S src
 B lib\bs\src
+S src\types
+B lib\bs\src\types
 S src\lib
 B lib\bs\src\lib
 S src\components
