@@ -11,31 +11,34 @@
 }
 
 .pokedex-wrapper .pokemons {
-    width: 80vw;
-
     display: flex;
     flex-direction: row;
-
     flex-wrap: wrap;
 
-    justify-content: space-between;
-    align-items: flex-start;
-
-    background-color: var(--second-color);
-    border-radius: 5px;
-}
-
-.pokedex-wrapper .pokemons .pokemon {
-    width: 200px;
-    height: 200px;
-
-    display: flex;
-    flex-direction: row;
+    max-height: 765px;
 
     justify-content: center;
     align-items: center;
 
-    background-color: crimson;
+    background-color: var(--second-color);
+    border-radius: 5px;
+
+    overflow: auto;
+}
+
+.pokedex-wrapper .pokemons .pokemon {
+    width: 255px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 
     overflow: auto;
 
@@ -45,4 +48,41 @@
     font-size: 15px;
 
     color: white;
+}
+.pokedex-wrapper .pokemons .pokemon .pokemon-img {
+    width: 150px;
+}
+
+
+
+
+
+.pokedex-wrapper .actions-btns-wrapper {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+.pokedex-wrapper .actions-btns-wrapper .btn {
+    width: 50%;
+
+    appearance: none;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    color: white;
+    background-color: crimson;
+
+    padding: 30px 0px;
+    margin: 10px 5px;
 }

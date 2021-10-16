@@ -20,7 +20,7 @@ let make = () => {
 
     let fetchPokemons = (offsetVal: int) => {
 
-        let url = "https://pokeapi.co/api/v2/pokemon?limit=5&offset=" ++ (offsetVal) -> Belt.Int.toString
+        let url = "https://pokeapi.co/api/v2/pokemon?limit=25&offset=" ++ (offsetVal) -> Belt.Int.toString
 
         let _ =
         Fetch.fetch(url)
@@ -41,7 +41,7 @@ let make = () => {
         let fn = () => {
 
             setLoading(_ => true)
-            fetchPokemons(offset + 5)
+            fetchPokemons(offset + 25)
         }
 
         switch loading {
@@ -54,10 +54,10 @@ let make = () => {
 
         let fn = () => {
 
-            (offset - 5 >= 0) ? {
+            (offset - 25 >= 0) ? {
 
                 setLoading(_ => true)
-                fetchPokemons(offset - 5)
+                fetchPokemons(offset - 25)
 
             } : "Min page is 0" -> Js.log
         }
@@ -95,11 +95,12 @@ let make = () => {
 
                     <div key={key->Belt.Int.toString} className="pokemon">
                         <h1 className="title">
-                        { pokemon.name 
-                        -> Js.String.toUpperCase 
-                        -> s 
-                        }
+                            { pokemon.name 
+                            -> Js.String.toUpperCase 
+                            -> s 
+                            }
                         </h1>
+                        <img className="pokemon-img" src={"https://cdn.traction.one/pokedex/pokemon/" ++ Belt.Int.toString(offset + (key + 1)) ++ ".png"} />
                     </div>
                 })
                 ->React.array
@@ -116,7 +117,9 @@ let make = () => {
         | _ => "Unexpected error"->s
         }}
 
-        <button onClick={nextPage} >{"Next"->s}</button>
-        <button onClick={previousPage} >{"Previous"->s}</button>
+        <div className="actions-btns-wrapper">
+            <button className="btn" onClick={previousPage} >{"Previous"->s}</button>
+            <button className="btn" onClick={nextPage} >{"Next"->s}</button>
+        </div>
     </div>
 }
